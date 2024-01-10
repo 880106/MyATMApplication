@@ -1,0 +1,9 @@
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\obj\Debug\BusinesslogicLayer.csproj.AssemblyReference.cache
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\obj\Debug\BusinesslogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\bin\Debug\BusinesslogicLayer.dll
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\bin\Debug\BusinesslogicLayer.pdb
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\obj\Debug\BusinesslogicLayer.csproj.CopyComplete
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\obj\Debug\BusinesslogicLayer.dll
+C:\Users\APHELELE\Downloads\My ATM APPLICATION\BusinesslogicLayer\obj\Debug\BusinesslogicLayer.pdb
