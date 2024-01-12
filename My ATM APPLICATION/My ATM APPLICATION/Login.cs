@@ -24,29 +24,29 @@ namespace My_ATM_APPLICATION
         {
 
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
-           
+
             errorProviderAccNumber.Clear();
             errorProviderPin.Clear();
 
-            
+
             if (!int.TryParse(txtAccNumber.Text, out int accNumber))
             {
-                
+
                 errorProviderAccNumber.SetError(txtAccNumber, "Invalid input. Please enter a valid number for Account Number.");
                 return;
             }
 
-           
+
             if (!int.TryParse(txtPin.Text, out int pin))
             {
-                
+
                 errorProviderPin.SetError(txtPin, "Invalid input. Please enter a valid number for PIN.");
                 return;
             }
 
-          
+
 
             if (bll.ValidateLogin(accNumber, pin))
             {
@@ -58,7 +58,7 @@ namespace My_ATM_APPLICATION
             }
             else
             {
-             
+
                 MessageBox.Show("Invalid credentials. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -93,22 +93,6 @@ namespace My_ATM_APPLICATION
         {
             lblClose.ForeColor = Color.White;
         }
-
-       
-
-        private void btnLogin_MouseHover(object sender, EventArgs e)
-        {
-            btnLogin.BackColor = Color.Green;
-        }
-
-        private void btnLogin_MouseLeave(object sender, EventArgs e)
-        {
-            btnLogin.BackColor = Color.SlateGray;
-        }
-
-        private void errorProviderAccNumber_RightToLeftChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

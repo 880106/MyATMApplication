@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Withdraw));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,10 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnWithDraw = new System.Windows.Forms.Button();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblBalance = new System.Windows.Forms.Label();
+            this.txtAmount = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.btnWithDraw = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,30 +118,6 @@
             this.panel2.Size = new System.Drawing.Size(803, 29);
             this.panel2.TabIndex = 50;
             // 
-            // btnWithDraw
-            // 
-            this.btnWithDraw.BackColor = System.Drawing.Color.SlateGray;
-            this.btnWithDraw.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWithDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWithDraw.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnWithDraw.Location = new System.Drawing.Point(296, 332);
-            this.btnWithDraw.Name = "btnWithDraw";
-            this.btnWithDraw.Size = new System.Drawing.Size(164, 40);
-            this.btnWithDraw.TabIndex = 55;
-            this.btnWithDraw.Text = "Withdraw";
-            this.btnWithDraw.UseVisualStyleBackColor = false;
-            this.btnWithDraw.Click += new System.EventHandler(this.btnWithDraw_Click);
-            this.btnWithDraw.MouseLeave += new System.EventHandler(this.btnWithDraw_MouseLeave);
-            this.btnWithDraw.MouseHover += new System.EventHandler(this.btnWithDraw_MouseHover);
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAmount.Location = new System.Drawing.Point(266, 270);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(258, 34);
-            this.txtAmount.TabIndex = 54;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -157,11 +138,115 @@
             this.lblBalance.TabIndex = 57;
             this.lblBalance.Text = "xxxxxxx";
             // 
+            // txtAmount
+            // 
+            this.txtAmount.AcceptsReturn = false;
+            this.txtAmount.AcceptsTab = false;
+            this.txtAmount.AnimationSpeed = 200;
+            this.txtAmount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtAmount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtAmount.AutoSizeHeight = true;
+            this.txtAmount.BackColor = System.Drawing.Color.Transparent;
+            this.txtAmount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtAmount.BackgroundImage")));
+            this.txtAmount.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtAmount.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtAmount.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtAmount.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtAmount.BorderRadius = 1;
+            this.txtAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtAmount.BorderThickness = 1;
+            this.txtAmount.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAmount.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtAmount.DefaultText = "";
+            this.txtAmount.FillColor = System.Drawing.Color.White;
+            this.txtAmount.HideSelection = true;
+            this.txtAmount.IconLeft = null;
+            this.txtAmount.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAmount.IconPadding = 10;
+            this.txtAmount.IconRight = null;
+            this.txtAmount.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAmount.Lines = new string[0];
+            this.txtAmount.Location = new System.Drawing.Point(267, 270);
+            this.txtAmount.MaxLength = 32767;
+            this.txtAmount.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtAmount.Modified = false;
+            this.txtAmount.Multiline = false;
+            this.txtAmount.Name = "txtAmount";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAmount.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtAmount.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAmount.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtAmount.OnIdleState = stateProperties4;
+            this.txtAmount.Padding = new System.Windows.Forms.Padding(3);
+            this.txtAmount.PasswordChar = '\0';
+            this.txtAmount.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtAmount.PlaceholderText = "";
+            this.txtAmount.ReadOnly = false;
+            this.txtAmount.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAmount.SelectedText = "";
+            this.txtAmount.SelectionLength = 0;
+            this.txtAmount.SelectionStart = 0;
+            this.txtAmount.ShortcutsEnabled = true;
+            this.txtAmount.Size = new System.Drawing.Size(241, 34);
+            this.txtAmount.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtAmount.TabIndex = 58;
+            this.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAmount.TextMarginBottom = 0;
+            this.txtAmount.TextMarginLeft = 3;
+            this.txtAmount.TextMarginTop = 1;
+            this.txtAmount.TextPlaceholder = "";
+            this.txtAmount.UseSystemPasswordChar = false;
+            this.txtAmount.WordWrap = true;
+            // 
+            // btnWithDraw
+            // 
+            this.btnWithDraw.ActiveBorderThickness = 1;
+            this.btnWithDraw.ActiveCornerRadius = 20;
+            this.btnWithDraw.ActiveFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnWithDraw.ActiveForecolor = System.Drawing.Color.White;
+            this.btnWithDraw.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnWithDraw.BackColor = System.Drawing.SystemColors.Control;
+            this.btnWithDraw.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWithDraw.BackgroundImage")));
+            this.btnWithDraw.ButtonText = "WithDraw";
+            this.btnWithDraw.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWithDraw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWithDraw.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnWithDraw.IdleBorderThickness = 1;
+            this.btnWithDraw.IdleCornerRadius = 20;
+            this.btnWithDraw.IdleFillColor = System.Drawing.Color.SlateGray;
+            this.btnWithDraw.IdleForecolor = System.Drawing.Color.Black;
+            this.btnWithDraw.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnWithDraw.Location = new System.Drawing.Point(284, 323);
+            this.btnWithDraw.Margin = new System.Windows.Forms.Padding(5);
+            this.btnWithDraw.Name = "btnWithDraw";
+            this.btnWithDraw.Size = new System.Drawing.Size(196, 45);
+            this.btnWithDraw.TabIndex = 59;
+            this.btnWithDraw.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnWithDraw.Click += new System.EventHandler(this.btnWithDraw_Click_1);
+            // 
             // Withdraw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnWithDraw);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.lblBalance);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -169,8 +254,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblBack);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnWithDraw);
-            this.Controls.Add(this.txtAmount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Withdraw";
             this.Text = "Withdraw";
@@ -190,10 +273,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnWithDraw;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblBalance;
         private System.Windows.Forms.Label label8;
+        private Bunifu.UI.WinForms.BunifuTextBox txtAmount;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnWithDraw;
     }
 }

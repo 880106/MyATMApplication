@@ -20,34 +20,12 @@ namespace My_ATM_APPLICATION
         }
         BusinessLogicLayerClass bll = new BusinessLogicLayerClass();
 
-
         private void Withdraw_Load(object sender, EventArgs e)
         {
             refresh();
-        } 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            home.Show();
-            this.Hide();
-        }
-
-        private void lblBack_MouseHover(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Red;
-        }
-
-        private void lblBack_MouseLeave(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Black;
-        }
-
-        private void btnWithDraw_Click(object sender, EventArgs e)
+        private void btnWithDraw_Click_1(object sender, EventArgs e)
         {
             // Validate and parse the withdrawal amount
             if (!decimal.TryParse(txtAmount.Text, out decimal withDrawAmount) || withDrawAmount <= 0)
@@ -68,22 +46,31 @@ namespace My_ATM_APPLICATION
             }
             else
             {
-                
+
                 MessageBox.Show("WithDrawal Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtAmount.Clear();
                 refresh();
             }
         }
+     
 
-        private void btnWithDraw_MouseHover(object sender, EventArgs e)
+        private void lblBack_Click(object sender, EventArgs e)
         {
-            btnWithDraw.BackColor = Color.Green;
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
 
-        private void btnWithDraw_MouseLeave(object sender, EventArgs e)
+        private void lblBack_MouseHover(object sender, EventArgs e)
         {
-            btnWithDraw.BackColor = Color.SlateGray;
+            lblBack.ForeColor = Color.Red;
         }
+
+        private void lblBack_MouseLeave(object sender, EventArgs e)
+        {
+            lblBack.ForeColor = Color.Black;
+        }
+
 
         public void refresh()
         {
@@ -92,5 +79,7 @@ namespace My_ATM_APPLICATION
             decimal balance = bll.GetBalance(int.Parse(lblBalance.Text));
             lblBalance.Text = $"{balance:C}";
         }
+
+       
     }
 }

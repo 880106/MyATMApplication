@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DevExpress.Blazor.Reporting.JSBasedControls.props" />
+</Project>

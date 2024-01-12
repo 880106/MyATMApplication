@@ -17,31 +17,16 @@ namespace My_ATM_APPLICATION
         public ChangePin()
         {
             InitializeComponent();
+
         }
         BusinessLogicLayerClass bll = new BusinessLogicLayerClass();
+
         private void ChangePin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            home.Show();
-            this.Hide();
-        }
-
-        private void lblBack_MouseHover(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Red;
-        }
-
-        private void lblBack_MouseLeave(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Black;
-        }
-
-        private void btnChange_Click(object sender, EventArgs e)
+        private void btnChange_Click_1(object sender, EventArgs e)
         {
             // Validate and parse the new PIN and confirmation
             if (!int.TryParse(txtNewPin.Text, out int newPin) || !int.TryParse(txtConfirmPin.Text, out int confirmPin))
@@ -72,21 +57,30 @@ namespace My_ATM_APPLICATION
 
             }
         }
-
-        private void button1_MouseHover(object sender, EventArgs e)
+        private void lblBack_Click(object sender, EventArgs e)
         {
-            btnChange.BackColor = Color.Green;
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
 
-        private void btnChange_MouseLeave(object sender, EventArgs e)
+        private void lblBack_MouseHover(object sender, EventArgs e)
         {
-            btnChange.BackColor = Color.SlateGray;
+            lblBack.ForeColor = Color.Red;
         }
 
+        private void lblBack_MouseLeave(object sender, EventArgs e)
+        {
+            lblBack.ForeColor = Color.Black;
+        }
+
+        // clears the textboxes
         private void Clear()
         {
             txtNewPin.Clear();
             txtConfirmPin.Clear();
         }
+
+     
     }
 }

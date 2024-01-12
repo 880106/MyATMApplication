@@ -18,25 +18,10 @@ namespace My_ATM_APPLICATION
             InitializeComponent();
         }
         BusinessLogicLayerClass bll = new BusinessLogicLayerClass();
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            Home home = new Home();
-            home.Show();
-            this.Hide();
 
-        }
+        private void btnChange_Click(object sender, EventArgs e)
+        {
 
-        private void lblBack_MouseHover(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Red;
-        }
-
-        private void lblBack_MouseLeave(object sender, EventArgs e)
-        {
-            lblBack.ForeColor = Color.Black;
-        }
-        private void btnDeposit_Click(object sender, EventArgs e)
-        {
             // Validate and parse the deposit amount
             if (!decimal.TryParse(txtAmount.Text, out decimal depositAmount) || depositAmount <= 0)
             {
@@ -62,16 +47,23 @@ namespace My_ATM_APPLICATION
 
             }
         }
-        private void btnDeposit_MouseHover(object sender, EventArgs e)
+        private void lblBack_Click(object sender, EventArgs e)
         {
-             btnDeposit.BackColor = Color.Green;
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+
         }
 
-        private void btnDeposit_MouseLeave(object sender, EventArgs e)
+        private void lblBack_MouseHover(object sender, EventArgs e)
         {
-            btnDeposit.BackColor = Color.SlateGray;
+            lblBack.ForeColor = Color.Red;
         }
 
+        private void lblBack_MouseLeave(object sender, EventArgs e)
+        {
+            lblBack.ForeColor = Color.Black;
+        }
        
     }
 }

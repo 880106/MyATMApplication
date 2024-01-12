@@ -25,100 +25,48 @@ namespace My_ATM_APPLICATION
              
         }
 
-        private void btnDeposit_Click(object sender, EventArgs e)
+        private void btnDeposit_Click_1(object sender, EventArgs e)
         {
             Deposit depo = new Deposit();
             depo.Show();
             this.Hide();
         }
 
-        private void btnDeposit_MouseHover(object sender, EventArgs e)
-        {
-            btnDeposit.BackColor = Color.Green;
-        }
-        private void btnDeposit_MouseLeave(object sender, EventArgs e)
-        {
-            btnDeposit.BackColor = Color.SlateGray;
-        }
-        private void btnFastCash_Click(object sender, EventArgs e)
+        private void btnFastCash_Click_1(object sender, EventArgs e)
         {
             FastCash fast = new FastCash();
             fast.Show();
             this.Hide();
         }
-        private void btnFastCash_MouseHover(object sender, EventArgs e)
-        {
-            btnFastCash.BackColor = Color.Green;
-        }
 
-        private void btnFastCash_MouseLeave(object sender, EventArgs e)
-        {
-            btnFastCash.BackColor = Color.SlateGray;
-        }
-
-        private void btnChangePin_Click(object sender, EventArgs e)
+        private void btnChangePin_Click_1(object sender, EventArgs e)
         {
             ChangePin change = new ChangePin();
             change.Show();
             this.Hide();
         }
-        private void btnChangePin_MouseHover(object sender, EventArgs e)
-        {
-            btnChangePin.BackColor = Color.Green;
-        }
 
-        private void btnChangePin_MouseLeave(object sender, EventArgs e)
-        {
-            btnChangePin.BackColor = Color.SlateGray;
-        }
-
-        private void btnWithDraw_Click(object sender, EventArgs e)
+        private void btnWithDraw_Click_1(object sender, EventArgs e)
         {
             Withdraw withdraw = new Withdraw();
             withdraw.Show();
             this.Hide();
         }
-        private void btnWithDraw_MouseHover(object sender, EventArgs e)
-        {
-            btnWithDraw.BackColor = Color.Green;
-        }
 
-        private void btnWithDraw_MouseLeave(object sender, EventArgs e)
-        {
-            btnWithDraw.BackColor = Color.SlateGray;
-        }
-
-        private void btnMiniStatement_Click(object sender, EventArgs e)
+        private void btnMiniStatement_Click_1(object sender, EventArgs e)
         {
             miniStatement mini = new miniStatement();
             mini.Show();
             this.Hide();
         }
-        private void btnMiniStatement_MouseHover(object sender, EventArgs e)
-        {
-            btnMiniStatement.BackColor = Color.Green;
-        }
 
-        private void btnMiniStatement_MouseLeave(object sender, EventArgs e)
-        {
-            btnMiniStatement.BackColor = Color.SlateGray;
-        }
-
-        private void btnBalance_Click(object sender, EventArgs e)
+        private void btnBalance_Click_1(object sender, EventArgs e)
         {
             Balance balance = new Balance(lblAccNumber.Text);
             balance.Show();
             this.Hide();
         }
-        private void btnBalance_MouseHover(object sender, EventArgs e)
-        {
-            btnBalance.BackColor = Color.Green;
-        }
 
-        private void btnBalance_MouseLeave(object sender, EventArgs e)
-        {
-            btnBalance.BackColor = Color.SlateGray;
-        }
         private void lblLogout_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -136,6 +84,8 @@ namespace My_ATM_APPLICATION
             lblLogout.ForeColor = Color.Black;
         }
 
-        
+       
+
+       
     }
 }

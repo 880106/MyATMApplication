@@ -39,7 +39,7 @@ namespace My_ATM_APPLICATION
             lblBack.ForeColor = Color.Black;
         }
 
-        private void btn100_Click(object sender, EventArgs e)
+        private void btn100_Click_1(object sender, EventArgs e)
         {
             // Assuming the button amount is 100
             decimal withdrawalAmount = 100;
@@ -51,29 +51,18 @@ namespace My_ATM_APPLICATION
             string statusMessage;
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-               
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh(); 
             }
         }
 
-        private void btn100_MouseHover(object sender, EventArgs e)
+        private void btn1000_Click_1(object sender, EventArgs e)
         {
-            btn100.BackColor = Color.Green;
-        }
-
-        private void btn100_MouseLeave(object sender, EventArgs e)
-        {
-            btn100.BackColor = Color.SlateGray;
-        }
-
-        private void btn1000_Click(object sender, EventArgs e)
-        {
-            // Assuming the button amount is 100
+            // Assuming the button amount is 1000
             decimal withdrawalAmount = 1000;
 
             // Get the account number from the Home form
@@ -83,29 +72,18 @@ namespace My_ATM_APPLICATION
             string statusMessage;
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-               
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh();
             }
         }
 
-        private void btn1000_MouseHover(object sender, EventArgs e)
+        private void btn5000_Click_1(object sender, EventArgs e)
         {
-            btn1000.BackColor = Color.Green;
-        }
-
-        private void btn1000_MouseLeave(object sender, EventArgs e)
-        {
-            btn1000.BackColor = Color.SlateGray;
-        }
-
-        private void btn5000_Click(object sender, EventArgs e)
-        {
-            // Assuming the button amount is 100
+            // Assuming the button amount is 5000
             decimal withdrawalAmount = 5000;
 
             // Get the account number from the Home form
@@ -115,28 +93,18 @@ namespace My_ATM_APPLICATION
             string statusMessage;
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-              
+
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh();
             }
         }
 
-        private void btn5000_MouseHover(object sender, EventArgs e)
-        {
-            btn5000.BackColor = Color.Green;
-        }
-
-        private void btn5000_MouseLeave(object sender, EventArgs e)
-        {
-            btn5000.BackColor = Color.SlateGray;
-        }
-
-        private void btn500_Click(object sender, EventArgs e)
+        private void btn500_Click_1(object sender, EventArgs e)
         {
             // Assuming the button amount is 100
             decimal withdrawalAmount = 500;
@@ -148,29 +116,22 @@ namespace My_ATM_APPLICATION
             string statusMessage;
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-                
+
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh();
             }
         }
 
-        private void btn500_MouseHover(object sender, EventArgs e)
+       
+ 
+        private void btn2000_Click_1(object sender, EventArgs e)
         {
-            btn500.BackColor = Color.Green;
-        }
-
-        private void btn500_MouseLeave(object sender, EventArgs e)
-        {
-            btn500.BackColor = Color.SlateGray;
-        }
-
-        private void btn2000_Click(object sender, EventArgs e)
-        {
-            // Assuming the button amount is 100
+            // Assuming the button amount is 2000
             decimal withdrawalAmount = 2000;
 
             // Get the account number from the Home form
@@ -181,39 +142,20 @@ namespace My_ATM_APPLICATION
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
 
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh();
             }
         }
 
-        private void btn2000_MouseHover(object sender, EventArgs e)
+        private void btn10000_Click_1(object sender, EventArgs e)
         {
-            btn2000.BackColor = Color.Green;
-        }
 
-        private void btn2000_MouseLeave(object sender, EventArgs e)
-        {
-            btn2000.BackColor = Color.SlateGray;
-        }
-
-        private void btn10000_MouseHover(object sender, EventArgs e)
-        {
-            btn10000.BackColor = Color.Green;
-        }
-
-        private void btn10000_MouseLeave(object sender, EventArgs e)
-        {
-            btn10000.BackColor = Color.SlateGray;
-        }
-
-        private void btn10000_Click(object sender, EventArgs e)
-        {
-            // Assuming the button amount is 100
+            // Assuming the button amount is 10 000
             decimal withdrawalAmount = 10000;
 
             // Get the account number from the Home form
@@ -223,16 +165,16 @@ namespace My_ATM_APPLICATION
             string statusMessage;
             if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
             {
-                MessageBox.Show(statusMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                refresh();
-               
+
+                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Transaction Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refresh();
+             
             }
         }
-
         public void refresh()
         {
             lblBalance.Text = Home.AccNumber;
@@ -241,5 +183,6 @@ namespace My_ATM_APPLICATION
             lblBalance.Text = $"{balance:C}";
         }
 
+       
     }
 }

@@ -16,7 +16,7 @@ namespace DataAccessLayer
         SqlCommand command;
         SqlDataAdapter dbAdapter;
         DataTable dt;
-
+        // inserting a user to the database
         public int AddAccount(Accounts account)
         {
             dbConn.Open();

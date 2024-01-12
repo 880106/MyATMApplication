@@ -42,7 +42,7 @@ namespace BusinessLogicLayer
                 Transaction depositTransaction = new Transaction
                 {
                     AccNumber = accNumber,
-                    Description = "Deposit",
+                    Description = "Deposit", //adds the text with deposited to the table when ever a user deposit
                     Amount = depositAmount,
                     Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 };
@@ -92,7 +92,7 @@ namespace BusinessLogicLayer
                 Transaction withdrawalTransaction = new Transaction
                 {
                     AccNumber = accNumber,
-                    Description = "Withdrawal",
+                    Description = "Withdrawal", // adds the text withdrawal to the table when ever a user withdraws
                     Amount = withDrawAmount,
                     Date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
                 };

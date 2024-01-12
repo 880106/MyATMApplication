@@ -35,6 +35,15 @@ namespace My_ATM_APPLICATION
 
             // Set the DataGridView's DataSource to the transactions DataTable
             dgvMiniStatement.DataSource = transactionTable;
+
+            // Adjust font size of DataGridView
+            dgvMiniStatement.DefaultCellStyle.Font = new Font("Arial", 12); // Change "Arial" to your desired font and 12 to the desired size
+
+            // Auto-size columns to fit content
+            dgvMiniStatement.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            // Set column widths manually if needed
+            // dgvMiniStatement.Columns["ColumnName"].Width = 150; // Specify the column name and desired width
         }
 
         private void lblBack_MouseHover(object sender, EventArgs e)
@@ -47,10 +56,7 @@ namespace My_ATM_APPLICATION
             lblBack.ForeColor = Color.Black;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
       
     }

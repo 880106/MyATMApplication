@@ -27,13 +27,13 @@ namespace My_ATM_APPLICATION
         {
             //  lblAccNumber.Text = accountNumber;
             lblAccNumber.Text = Home.AccNumber;
-
+            // gets the  balance form the database
             decimal balance = dal.GetBalance(int.Parse(lblAccNumber.Text));
             lblBalance.Text = $"{balance:C}";
         }
         private void lblBack_Click(object sender, EventArgs e)
         {
-
+            // moves backe to the home page
             Home home = new Home();
             home.Show();
             this.Hide();
