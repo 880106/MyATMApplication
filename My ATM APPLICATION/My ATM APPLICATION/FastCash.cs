@@ -48,10 +48,10 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+            
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Fast Cash Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -69,10 +69,10 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+            
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -90,11 +90,11 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+          
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
 
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -113,11 +113,11 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+         
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
 
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -138,11 +138,11 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+           
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
 
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -162,11 +162,11 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withdrawalAmount, out statusMessage))
+            
+            if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
 
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

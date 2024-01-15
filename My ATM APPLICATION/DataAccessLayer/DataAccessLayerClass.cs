@@ -62,25 +62,43 @@ namespace DataAccessLayer
 
         public decimal GetBalance(int accNumber)
         {
-            dbConn.Open();
-
-            command = new SqlCommand("sp_GetBalance", dbConn);
-            command.CommandType = CommandType.StoredProcedure;
-
-            command.Parameters.AddWithValue("@AccNumber", accNumber);
-
-            SqlDataReader reader = command.ExecuteReader();
-
             decimal balance = 0;
 
-            if (reader.HasRows)
+            try
             {
-                reader.Read();
-                balance = reader.GetDecimal(reader.GetOrdinal("Balance"));
-            }
+                // Assuming dbConn is a SqlConnection object declared and initialized elsewhere in your code
+                if (dbConn.State == ConnectionState.Closed)
+                {
+                    dbConn.Open();
+                }
 
-            reader.Close();
-            dbConn.Close();
+                using (command = new SqlCommand("sp_GetBalance", dbConn))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@AccNumber", accNumber);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            reader.Read();
+                            balance = reader.GetDecimal(reader.GetOrdinal("Balance"));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions appropriately, e.g., log the error
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (dbConn.State == ConnectionState.Open)
+                {
+                    dbConn.Close();
+                }
+            }
 
             return balance;
         }
@@ -140,6 +158,24 @@ namespace DataAccessLayer
             return result > 0;
         }
 
+        public bool FastCashProcedure(int accNumber, decimal amount)
+        {
+
+            dbConn.Open();
+
+            SqlCommand command = new SqlCommand("sp_FastCash", dbConn);
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@AccNumber", accNumber);
+            command.Parameters.AddWithValue("@Amount", amount);
+           
+
+            int result = command.ExecuteNonQuery();
+            dbConn.Close();
+            return result > 0;
+
+        }
+
         public bool transactions(Transaction transaction)
         {
             // Assume your connection and command objects are set up
@@ -188,6 +224,20 @@ namespace DataAccessLayer
             }
 
             return transactionTable;
+        }
+
+        public bool CheckAccountNumberExists(int accNumber)
+        {
+
+            dbConn.Open();
+            SqlCommand command = new SqlCommand("sp_CheckAccountNumberExists", dbConn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@AccNumber", accNumber);
+
+            int result = Convert.ToInt32(command.ExecuteScalar());
+            dbConn.Close();
+            return result == 1;
+
         }
     }
 }

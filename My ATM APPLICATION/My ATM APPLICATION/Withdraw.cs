@@ -38,11 +38,11 @@ namespace My_ATM_APPLICATION
             int accNumber = int.Parse(Home.AccNumber);
 
             // Call your business logic layer to update the balance
-            string statusMessage;
-            if (bll.withDrawal(accNumber, withDrawAmount, out statusMessage))
+          
+            if (bll.withDrawal(accNumber, withDrawAmount))
             {
 
-                MessageBox.Show(statusMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

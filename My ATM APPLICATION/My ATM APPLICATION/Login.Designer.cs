@@ -178,7 +178,7 @@
             this.txtAccNumber.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAccNumber.Lines = new string[0];
             this.txtAccNumber.Location = new System.Drawing.Point(423, 227);
-            this.txtAccNumber.MaxLength = 32767;
+            this.txtAccNumber.MaxLength = 10;
             this.txtAccNumber.MinimumSize = new System.Drawing.Size(4, 4);
             this.txtAccNumber.Modified = false;
             this.txtAccNumber.Multiline = false;
@@ -223,6 +223,7 @@
             this.txtAccNumber.TextPlaceholder = "";
             this.txtAccNumber.UseSystemPasswordChar = false;
             this.txtAccNumber.WordWrap = true;
+            this.txtAccNumber.TextChanged += new System.EventHandler(this.txtAccNumber_TextChanged);
             // 
             // btnLogin
             // 
@@ -280,7 +281,7 @@
             this.txtPin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPin.Lines = new string[0];
             this.txtPin.Location = new System.Drawing.Point(423, 283);
-            this.txtPin.MaxLength = 32767;
+            this.txtPin.MaxLength = 5;
             this.txtPin.MinimumSize = new System.Drawing.Size(4, 4);
             this.txtPin.Modified = false;
             this.txtPin.Multiline = false;
@@ -325,6 +326,7 @@
             this.txtPin.TextPlaceholder = "";
             this.txtPin.UseSystemPasswordChar = true;
             this.txtPin.WordWrap = true;
+            this.txtPin.TextChanged += new System.EventHandler(this.txtPin_TextChanged);
             // 
             // errorProviderAccNumber
             // 

@@ -269,7 +269,7 @@
             this.btnSIGNUP.IdleForecolor = System.Drawing.Color.Black;
             this.btnSIGNUP.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btnSIGNUP.Location = new System.Drawing.Point(364, 533);
-            this.btnSIGNUP.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSIGNUP.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnSIGNUP.Name = "btnSIGNUP";
             this.btnSIGNUP.Size = new System.Drawing.Size(181, 41);
             this.btnSIGNUP.TabIndex = 38;
@@ -305,7 +305,7 @@
             this.txtAccNum.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAccNum.Lines = new string[0];
             this.txtAccNum.Location = new System.Drawing.Point(181, 120);
-            this.txtAccNum.MaxLength = 32767;
+            this.txtAccNum.MaxLength = 10;
             this.txtAccNum.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtAccNum.Modified = false;
             this.txtAccNum.Multiline = false;
@@ -330,7 +330,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtAccNum.OnIdleState = stateProperties4;
-            this.txtAccNum.Padding = new System.Windows.Forms.Padding(3);
+            this.txtAccNum.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtAccNum.PasswordChar = '\0';
             this.txtAccNum.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtAccNum.PlaceholderText = "";
@@ -340,7 +340,7 @@
             this.txtAccNum.SelectionLength = 0;
             this.txtAccNum.SelectionStart = 0;
             this.txtAccNum.ShortcutsEnabled = true;
-            this.txtAccNum.Size = new System.Drawing.Size(221, 34);
+            this.txtAccNum.Size = new System.Drawing.Size(221, 43);
             this.txtAccNum.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtAccNum.TabIndex = 39;
             this.txtAccNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -350,6 +350,7 @@
             this.txtAccNum.TextPlaceholder = "";
             this.txtAccNum.UseSystemPasswordChar = false;
             this.txtAccNum.WordWrap = true;
+            this.txtAccNum.TextChanged += new System.EventHandler(this.txtAccNum_TextChanged);
             // 
             // txtName
             // 
@@ -405,7 +406,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtName.OnIdleState = stateProperties8;
-            this.txtName.Padding = new System.Windows.Forms.Padding(3);
+            this.txtName.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtName.PasswordChar = '\0';
             this.txtName.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtName.PlaceholderText = "";
@@ -415,7 +416,7 @@
             this.txtName.SelectionLength = 0;
             this.txtName.SelectionStart = 0;
             this.txtName.ShortcutsEnabled = true;
-            this.txtName.Size = new System.Drawing.Size(221, 34);
+            this.txtName.Size = new System.Drawing.Size(221, 43);
             this.txtName.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtName.TabIndex = 40;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -480,7 +481,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtSurname.OnIdleState = stateProperties12;
-            this.txtSurname.Padding = new System.Windows.Forms.Padding(3);
+            this.txtSurname.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtSurname.PasswordChar = '\0';
             this.txtSurname.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtSurname.PlaceholderText = "";
@@ -490,7 +491,7 @@
             this.txtSurname.SelectionLength = 0;
             this.txtSurname.SelectionStart = 0;
             this.txtSurname.ShortcutsEnabled = true;
-            this.txtSurname.Size = new System.Drawing.Size(221, 34);
+            this.txtSurname.Size = new System.Drawing.Size(221, 43);
             this.txtSurname.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSurname.TabIndex = 41;
             this.txtSurname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -555,7 +556,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtAddress.OnIdleState = stateProperties16;
-            this.txtAddress.Padding = new System.Windows.Forms.Padding(3);
+            this.txtAddress.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtAddress.PlaceholderText = "";
@@ -594,7 +595,7 @@
             this.txtPhone.BorderThickness = 1;
             this.txtPhone.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtPhone.DefaultFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.DefaultText = "";
             this.txtPhone.FillColor = System.Drawing.Color.White;
             this.txtPhone.HideSelection = true;
@@ -605,7 +606,7 @@
             this.txtPhone.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhone.Lines = new string[0];
             this.txtPhone.Location = new System.Drawing.Point(181, 460);
-            this.txtPhone.MaxLength = 32767;
+            this.txtPhone.MaxLength = 12;
             this.txtPhone.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPhone.Modified = false;
             this.txtPhone.Multiline = false;
@@ -630,9 +631,9 @@
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPhone.OnIdleState = stateProperties20;
-            this.txtPhone.Padding = new System.Windows.Forms.Padding(3);
+            this.txtPhone.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtPhone.PasswordChar = '\0';
-            this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPhone.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.ReadOnly = false;
             this.txtPhone.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -640,7 +641,7 @@
             this.txtPhone.SelectionLength = 0;
             this.txtPhone.SelectionStart = 0;
             this.txtPhone.ShortcutsEnabled = true;
-            this.txtPhone.Size = new System.Drawing.Size(221, 34);
+            this.txtPhone.Size = new System.Drawing.Size(221, 41);
             this.txtPhone.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPhone.TabIndex = 43;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -650,6 +651,7 @@
             this.txtPhone.TextPlaceholder = "";
             this.txtPhone.UseSystemPasswordChar = false;
             this.txtPhone.WordWrap = true;
+            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // txtPin
             // 
@@ -680,7 +682,7 @@
             this.txtPin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPin.Lines = new string[0];
             this.txtPin.Location = new System.Drawing.Point(654, 120);
-            this.txtPin.MaxLength = 32767;
+            this.txtPin.MaxLength = 5;
             this.txtPin.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPin.Modified = false;
             this.txtPin.Multiline = false;
@@ -705,7 +707,7 @@
             stateProperties24.ForeColor = System.Drawing.Color.Empty;
             stateProperties24.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPin.OnIdleState = stateProperties24;
-            this.txtPin.Padding = new System.Windows.Forms.Padding(3);
+            this.txtPin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtPin.PasswordChar = '\0';
             this.txtPin.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPin.PlaceholderText = "";
@@ -715,7 +717,7 @@
             this.txtPin.SelectionLength = 0;
             this.txtPin.SelectionStart = 0;
             this.txtPin.ShortcutsEnabled = true;
-            this.txtPin.Size = new System.Drawing.Size(221, 34);
+            this.txtPin.Size = new System.Drawing.Size(221, 43);
             this.txtPin.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtPin.TabIndex = 44;
             this.txtPin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -725,6 +727,7 @@
             this.txtPin.TextPlaceholder = "";
             this.txtPin.UseSystemPasswordChar = false;
             this.txtPin.WordWrap = true;
+            this.txtPin.TextChanged += new System.EventHandler(this.txtPin_TextChanged);
             // 
             // txtBalance
             // 
@@ -780,7 +783,7 @@
             stateProperties28.ForeColor = System.Drawing.Color.Empty;
             stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtBalance.OnIdleState = stateProperties28;
-            this.txtBalance.Padding = new System.Windows.Forms.Padding(3);
+            this.txtBalance.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtBalance.PasswordChar = '\0';
             this.txtBalance.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtBalance.PlaceholderText = "";
@@ -790,7 +793,7 @@
             this.txtBalance.SelectionLength = 0;
             this.txtBalance.SelectionStart = 0;
             this.txtBalance.ShortcutsEnabled = true;
-            this.txtBalance.Size = new System.Drawing.Size(221, 34);
+            this.txtBalance.Size = new System.Drawing.Size(221, 43);
             this.txtBalance.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtBalance.TabIndex = 45;
             this.txtBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -845,6 +848,7 @@
             this.cmbEducation.Name = "cmbEducation";
             this.cmbEducation.Size = new System.Drawing.Size(218, 32);
             this.cmbEducation.TabIndex = 46;
+            this.cmbEducation.Text = null;
             this.cmbEducation.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cmbEducation.TextLeftMargin = 5;
             // 
@@ -902,7 +906,7 @@
             stateProperties32.ForeColor = System.Drawing.Color.Empty;
             stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtOccupation.OnIdleState = stateProperties32;
-            this.txtOccupation.Padding = new System.Windows.Forms.Padding(3);
+            this.txtOccupation.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.txtOccupation.PasswordChar = '\0';
             this.txtOccupation.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtOccupation.PlaceholderText = "";
@@ -912,7 +916,7 @@
             this.txtOccupation.SelectionLength = 0;
             this.txtOccupation.SelectionStart = 0;
             this.txtOccupation.ShortcutsEnabled = true;
-            this.txtOccupation.Size = new System.Drawing.Size(221, 34);
+            this.txtOccupation.Size = new System.Drawing.Size(221, 43);
             this.txtOccupation.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtOccupation.TabIndex = 47;
             this.txtOccupation.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -934,6 +938,7 @@
             this.dtDOB.DisabledColor = System.Drawing.Color.Gray;
             this.dtDOB.DisplayWeekNumbers = false;
             this.dtDOB.DPHeight = 0;
+            this.dtDOB.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtDOB.FillDatePicker = false;
             this.dtDOB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtDOB.ForeColor = System.Drawing.Color.Black;
@@ -942,7 +947,7 @@
             this.dtDOB.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dtDOB.LeftTextMargin = 5;
             this.dtDOB.Location = new System.Drawing.Point(657, 462);
-            this.dtDOB.MinimumSize = new System.Drawing.Size(0, 32);
+            this.dtDOB.MinimumSize = new System.Drawing.Size(4, 32);
             this.dtDOB.Name = "dtDOB";
             this.dtDOB.Size = new System.Drawing.Size(218, 32);
             this.dtDOB.TabIndex = 48;

@@ -182,8 +182,8 @@
             this.txtConfirmPin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfirmPin.Lines = new string[0];
             this.txtConfirmPin.Location = new System.Drawing.Point(281, 254);
-            this.txtConfirmPin.MaxLength = 32767;
-            this.txtConfirmPin.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtConfirmPin.MaxLength = 5;
+            this.txtConfirmPin.MinimumSize = new System.Drawing.Size(4, 4);
             this.txtConfirmPin.Modified = false;
             this.txtConfirmPin.Multiline = false;
             this.txtConfirmPin.Name = "txtConfirmPin";
@@ -258,8 +258,8 @@
             this.txtNewPin.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPin.Lines = new string[0];
             this.txtNewPin.Location = new System.Drawing.Point(281, 182);
-            this.txtNewPin.MaxLength = 32767;
-            this.txtNewPin.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtNewPin.MaxLength = 5;
+            this.txtNewPin.MinimumSize = new System.Drawing.Size(4, 4);
             this.txtNewPin.Modified = false;
             this.txtNewPin.Multiline = false;
             this.txtNewPin.Name = "txtNewPin";

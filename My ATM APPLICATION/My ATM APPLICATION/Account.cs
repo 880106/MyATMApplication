@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogicLayer;
@@ -30,42 +31,55 @@ namespace My_ATM_APPLICATION
         {
             ClearAllErrors();
             ErrorProviders();
+
             if (errorProviderAccNum.GetError(txtAccNum) == "" &&
-               errorProviderName.GetError(txtName) == "" &&
-               errorProviderSurname.GetError(txtSurname) == "" &&
-               errorProviderAddress.GetError(txtAddress) == "" &&
-               errorProviderPhone.GetError(txtPhone) == "" &&
-               errorProviderPin.GetError(txtPin) == "" &&
-               errorProviderBalance.GetError(txtBalance) == "" &&
-               errorProviderEducation.GetError(cmbEducation) == "" &&
-               errorProviderOccupation.GetError(txtOccupation) == "" &&
-               errorProviderDOB.GetError(dtDOB) == "")
+                errorProviderName.GetError(txtName) == "" &&
+                errorProviderSurname.GetError(txtSurname) == "" &&
+                errorProviderAddress.GetError(txtAddress) == "" &&
+                errorProviderPhone.GetError(txtPhone) == "" &&
+                errorProviderPin.GetError(txtPin) == "" &&
+                errorProviderBalance.GetError(txtBalance) == "" &&
+                errorProviderEducation.GetError(cmbEducation) == "" &&
+                errorProviderOccupation.GetError(txtOccupation) == "" &&
+                errorProviderDOB.GetError(dtDOB) == "")
             {
-                Accounts acc = new Accounts();
-                acc.AccNumber = int.Parse(txtAccNum.Text);
-                acc.Name = txtName.Text;
-                acc.Surname = txtSurname.Text;
-                acc.Address = txtAddress.Text;
-                acc.Phone = txtPhone.Text;
-                acc.Pin = int.Parse(txtPin.Text);
-                acc.Balance = decimal.Parse(txtBalance.Text);
-                acc.Education = cmbEducation.Text;
-                acc.Occupation = txtOccupation.Text;
-                acc.DOB = dtDOB.Value.ToString("dd/MM/yyyy");
+                int accNumber = int.Parse(txtAccNum.Text);
 
-                int x = bll.AddAccount(acc);
-
-                if (x < 0)
+                // Check if the account number already exists
+                if (bll.IsAccountNumberUnique(accNumber))
                 {
-                    MessageBox.Show("Failed to add the account. Please check your input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Account number is unique, proceed to add the new account
+                    Accounts acc = new Accounts();
+                    acc.AccNumber = accNumber;
+                    acc.Name = txtName.Text;
+                    acc.Surname = txtSurname.Text;
+                    acc.Address = txtAddress.Text;
+                    acc.Phone = txtPhone.Text;
+                    acc.Pin = int.Parse(txtPin.Text);
+                    acc.Balance = decimal.Parse(txtBalance.Text);
+                    acc.Education = cmbEducation.Text;
+                    acc.Occupation = txtOccupation.Text;
+                    acc.DOB = dtDOB.Value.ToString("dd/MM/yyyy");
+
+                    int x = bll.AddAccount(acc);
+
+                    if (x < 0)
+                    {
+                        MessageBox.Show("Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clearControls();
+                        Login accountAdded = new Login();
+                        accountAdded.Show();
+                        this.Hide();
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add the account. Please check your input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Account Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearControls();
-                    Login accountAdded = new Login();
-                    accountAdded.Show();
-                    this.Hide();
+                    MessageBox.Show("Account with this number already exists. Please choose a different account number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -183,6 +197,103 @@ namespace My_ATM_APPLICATION
         private void lblLogout_MouseLeave(object sender, EventArgs e)
         {
             lblLogout.ForeColor = Color.Black;
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderPhone.Clear();
+
+            const string phonePattern = @"^\d{3}\s?\d{3}\s?\d{4}$";
+            const string errorMessage = "Invalid phone number. Please enter a number in the format 'XXX XXX XXXX'.";
+
+            string phoneNumber = txtPhone.Text.Trim();
+
+            if (string.IsNullOrEmpty(phoneNumber))
+            {
+                // Clear the error if the textbox is empty
+                return;
+            }
+
+            if (IsValidPhoneNumber(phoneNumber, phonePattern))
+            {
+                errorProviderPhone.Clear(); // Clear the error if the phone number is valid
+            }
+            else
+            {
+                errorProviderPhone.SetError(txtPhone, errorMessage);
+            }
+        }
+
+        private bool IsValidPhoneNumber(string phoneNumber, string pattern)
+        {
+            return Regex.IsMatch(phoneNumber, pattern);
+        }
+        
+
+        private void txtPin_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderPin.Clear();
+
+            const string pinPattern = @"^\d{5}$";
+            const string errorMessage = "Invalid PIN. Please enter a 5-digit PIN.";
+
+            if (string.IsNullOrWhiteSpace(txtPin.Text))
+            {
+                // Clear the error if the textbox is empty
+                return;
+            }
+
+            if (IsValidPin(txtPin.Text, pinPattern))
+            {
+                errorProviderPin.Clear(); // Clear the error if the PIN is valid
+            }
+            else
+            {
+                errorProviderPin.SetError(txtPin, errorMessage);
+            }
+        }
+
+        private bool IsValidPin(string pin, string pattern)
+        {
+            return Regex.IsMatch(pin, pattern);
+        }
+
+        private void txtAccNum_TextChanged(object sender, EventArgs e)
+        {
+
+
+            errorProviderAccNum.Clear();
+
+            const string accPattern = @"^\d{10}$";
+            const string errorMessage = "Invalid Account. Please enter a 10-digit Account Number.";
+            const string errorMessage1 = "Invalid Account.Account with this number already exists. Please choose a different account number.";
+            if (string.IsNullOrWhiteSpace(txtAccNum.Text))
+            {
+                // Clear the error if the textbox is empty
+                return;
+            }
+
+            int accNumber;
+            if (int.TryParse(txtAccNum.Text, out accNumber))
+            {
+                if (IsValidAccountNum(txtAccNum.Text, accPattern) && bll.IsAccountNumberUnique(accNumber))
+                {
+                    errorProviderAccNum.Clear(); // Clear the error if the Account Number is valid and unique
+                }
+                else
+                {
+                    errorProviderAccNum.SetError(txtAccNum, errorMessage1);
+                }
+            }
+            else
+            {
+                errorProviderAccNum.SetError(txtAccNum, errorMessage);
+            }
+        }
+
+        private bool IsValidAccountNum(string account, string pattern)
+        {
+            return Regex.IsMatch(account, pattern);
         }
 
     }

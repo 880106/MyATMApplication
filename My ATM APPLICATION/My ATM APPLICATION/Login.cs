@@ -93,6 +93,38 @@ namespace My_ATM_APPLICATION
         {
             lblClose.ForeColor = Color.White;
         }
- 
+
+        private void txtAccNumber_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderAccNumber.Clear(); // Clear the error if the input is valid
+
+            if (string.IsNullOrWhiteSpace(txtAccNumber.Text))
+            {
+                // Clear the error if the textbox is empty
+                return;
+            }
+
+            if (!int.TryParse(txtAccNumber.Text, out int accNumber) || accNumber <= 10)
+            {
+                errorProviderAccNumber.SetError(txtAccNumber, "Invalid input. Account number is too short.");
+            }
+
+        }
+
+        private void txtPin_TextChanged(object sender, EventArgs e)
+        {
+            errorProviderPin.Clear(); // Clear the error if the input is valid
+
+            if (string.IsNullOrWhiteSpace(txtPin.Text))
+            {
+                // Clear the error if the textbox is empty
+                return;
+            }
+
+            if (!int.TryParse(txtPin.Text, out int pinNumber) || pinNumber <= 5)
+            {
+                errorProviderPin.SetError(txtPin, "Invalid input. Pin is too short.");
+            }
+        }
     }
 }
