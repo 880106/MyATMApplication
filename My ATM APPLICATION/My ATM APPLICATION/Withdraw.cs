@@ -27,30 +27,34 @@ namespace My_ATM_APPLICATION
 
         private void btnWithDraw_Click_1(object sender, EventArgs e)
         {
-            // Validate and parse the withdrawal amount
-            if (!decimal.TryParse(txtAmount.Text, out decimal withDrawAmount) || withDrawAmount <= 0)
-            {
-                MessageBox.Show("Invalid withdrawal amount. Please enter a valid positive number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Get the account number from the Home form
-            int accNumber = int.Parse(Home.AccNumber);
-
-            // Call your business logic layer to update the balance
-          
-            if (bll.withDrawal(accNumber, withDrawAmount))
-            {
-
-                MessageBox.Show("WithDrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-
-                MessageBox.Show("WithDrawal Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtAmount.Clear();
-                refresh();
-            }
+                            // Validate and parse the withdrawal amount
+                if (!decimal.TryParse(txtAmount.Text, out decimal withDrawAmount) || withDrawAmount <= 0)
+                {
+                    MessageBox.Show("Invalid withdrawal amount. Please enter a valid positive number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                // Get the account number from the Home form
+                int accNumber = int.Parse(Home.AccNumber);
+                
+                // Call your business logic layer to check if the withdrawal is valid
+                if (withDrawAmount > bll.GetBalance(accNumber))
+                {
+                    MessageBox.Show("Insufficient funds for withdrawal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
+                // Call your business logic layer to update the balance
+                if (bll.withDrawal(accNumber, withDrawAmount))
+                {
+                    MessageBox.Show("Withdrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Withdrawal Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtAmount.Clear();
+                    refresh();
+                }
         }
      
 
