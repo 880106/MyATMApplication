@@ -44,10 +44,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 100
             decimal withdrawalAmount = 100;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
             
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
@@ -65,10 +65,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 1000
             decimal withdrawalAmount = 1000;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
             
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
@@ -86,10 +86,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 5000
             decimal withdrawalAmount = 5000;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
           
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
@@ -109,10 +109,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 100
             decimal withdrawalAmount = 500;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
          
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
@@ -134,10 +134,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 2000
             decimal withdrawalAmount = 2000;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
            
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
@@ -158,10 +158,10 @@ namespace My_ATM_APPLICATION
             // Assuming the button amount is 10 000
             decimal withdrawalAmount = 10000;
 
-            // Get the account number from the Home form
+            // Gets the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
             
             if (bll.ProcessFastCashTransaction(accNumber, withdrawalAmount))
             {
