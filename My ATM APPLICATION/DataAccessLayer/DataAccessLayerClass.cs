@@ -39,7 +39,7 @@ namespace DataAccessLayer
             dbConn.Close();
             return x;
         }
-
+    // validating the user input for login
         public bool ValidateLogin(int accNumber, int pin)
         {
             dbConn.Open();
@@ -59,14 +59,14 @@ namespace DataAccessLayer
 
             return loginSuccess;
         }
-
+// retrieving the balance from the database
         public decimal GetBalance(int accNumber)
         {
             decimal balance = 0;
 
             try
             {
-                // Assuming dbConn is a SqlConnection object declared and initialized elsewhere in your code
+                
                 if (dbConn.State == ConnectionState.Closed)
                 {
                     dbConn.Open();
@@ -89,8 +89,8 @@ namespace DataAccessLayer
             }
             catch (Exception ex)
             {
-                // Handle exceptions appropriately, e.g., log the error
-                Console.WriteLine("Error: " + ex.Message);
+    
+    
             }
             finally
             {
@@ -102,7 +102,7 @@ namespace DataAccessLayer
 
             return balance;
         }
-
+// depositing money to the account 
         public bool Deposit(int accNumber, decimal amount)
         {
             dbConn.Open();
@@ -121,7 +121,7 @@ namespace DataAccessLayer
             // Return true if the update was successful, false otherwise
             return result > 0;
         }
-
+// updating the user's pin
         public int UpdatePin(int accNumber, int newPin)
         {
             dbConn.Open();
@@ -138,7 +138,7 @@ namespace DataAccessLayer
 
             return result;
         }
-
+//withdrawing money from the account
         public bool WithDraw(int accNumber, decimal amount)
         {
             dbConn.Open();
@@ -157,7 +157,7 @@ namespace DataAccessLayer
             // Return true if the update was successful, false otherwise
             return result > 0;
         }
-
+// fast cash deductions from the account
         public bool FastCashProcedure(int accNumber, decimal amount)
         {
 
@@ -175,10 +175,10 @@ namespace DataAccessLayer
             return result > 0;
 
         }
-
+   // keeping record of the transactions
         public bool transactions(Transaction transaction)
         {
-            // Assume your connection and command objects are set up
+        
             dbConn.Open();
 
             command = new SqlCommand("sp_InsertTransaction", dbConn);
@@ -197,6 +197,8 @@ namespace DataAccessLayer
             // Return true if the update was successful, false otherwise
             return result > 0;
         }
+
+// retrieving acccount statement
         public DataTable GetTransactionsByAccNumber(int accNumber)
         {
             DataTable transactionTable = new DataTable();
@@ -214,9 +216,8 @@ namespace DataAccessLayer
                 dataAdapter.Fill(transactionTable);
             }
             catch (Exception ex)
-            {
-                // Handle exceptions appropriately (e.g., log or throw)
-                Console.WriteLine(ex.Message);
+    
+    
             }
             finally
             {
@@ -225,7 +226,7 @@ namespace DataAccessLayer
 
             return transactionTable;
         }
-
+  // check if an account number exists or not
         public bool CheckAccountNumberExists(int accNumber)
         {
 
