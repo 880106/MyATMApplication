@@ -27,23 +27,22 @@ namespace My_ATM_APPLICATION
         }
         private void miniStatement_Load(object sender, EventArgs e)
         {
-            // Get the AccNumber from the Home form
+            // Gets the AccNumber from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to get transactions
+            // Calling business logic layer to get transactions
             DataTable transactionTable = bll.GetTransactionsByAccNumber1(accNumber);
 
             // Set the DataGridView's DataSource to the transactions DataTable
             dgvMiniStatement.DataSource = transactionTable;
 
             // Adjust font size of DataGridView
-            dgvMiniStatement.DefaultCellStyle.Font = new Font("Arial", 12); // Change "Arial" to your desired font and 12 to the desired size
+            dgvMiniStatement.DefaultCellStyle.Font = new Font("Arial", 12); 
 
             // Auto-size columns to fit content
             dgvMiniStatement.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            // Set column widths manually if needed
-            // dgvMiniStatement.Columns["ColumnName"].Width = 150; // Specify the column name and desired width
+           
         }
 
         private void lblBack_MouseHover(object sender, EventArgs e)
