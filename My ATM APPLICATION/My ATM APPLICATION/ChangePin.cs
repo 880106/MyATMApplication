@@ -62,7 +62,7 @@ namespace My_ATM_APPLICATION
                 return;
             }
 
-            // Call your business logic layer to update the PIN
+            // Calling business logic layer to update the PIN
             if (bll.UpdatePin(accNumber, newPin))
             {
                 MessageBox.Show("PIN update failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
