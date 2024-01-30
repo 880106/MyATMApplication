@@ -32,7 +32,7 @@ namespace My_ATM_APPLICATION
             // Get the account number from the Home form
             int accNumber = int.Parse(Home.AccNumber);
 
-            // Call your business logic layer to update the balance
+            // Calling business logic layer to update the balance
             if (bll.DepositAmount(accNumber, depositAmount))
             {
                 MessageBox.Show("Deposit failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
