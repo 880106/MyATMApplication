@@ -34,17 +34,17 @@ namespace My_ATM_APPLICATION
                     return;
                 }
                 
-                // Get the account number from the Home form
+                // Gets the account number from the Home form
                 int accNumber = int.Parse(Home.AccNumber);
                 
-                // Call your business logic layer to check if the withdrawal is valid
+                // Calling business logic layer to check if the withdrawal is valid
                 if (withDrawAmount > bll.GetBalance(accNumber))
                 {
                     MessageBox.Show("Insufficient funds for withdrawal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 
-                // Call your business logic layer to update the balance
+                // Calling business logic layer to update the balance
                 if (bll.withDrawal(accNumber, withDrawAmount))
                 {
                     MessageBox.Show("Withdrawal Unsuccessful", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
